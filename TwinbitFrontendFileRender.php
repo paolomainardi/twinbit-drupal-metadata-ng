@@ -3,14 +3,14 @@
 /**
  * @file
  * Provides an abstract way to render a file object as image or link.
- * 
+ *
  * It is almost used from withing the TwinbitFrontendFile class, but it can be used standalon, for example:
- * 
+ *
  * $file = file_load($fid);
  * $render = new TwinbitFrontendFileRender($file);
  * $image_html = $image->render('image');
- * $link_html = $image->render('link');  
- * 
+ * $link_html = $image->render('link');
+ *
  * // custom theme functions
  * $image_html_custom = $image->render('image', array('#theme' => 'custom_image_formatter'));
  * $link_html_custom = $image->render('link', array('#theme' => 'custom_link_formatter'));
@@ -26,12 +26,12 @@ class TwinbitFrontendFileRender {
      */
     public function __construct($file) {
         $this->file = (array) $file;
-    }   
+    }
 
     /**
      * @param $style
      *  Image style name
-     * 
+     *
      * @return $this instance
      */
     public function setStyle($style) {
@@ -40,17 +40,17 @@ class TwinbitFrontendFileRender {
     }
 
     /**
-     * Example: 
+     * Example:
      * $image_renderers = new TwinbitFrontendImage('node', $file_ref, 'field_file_upload');
      *  foreach ($image_renderers->renderers as $image_render) {
    *     $image_render->setStyle('product_photo')
    *                                    ->setAttributes(array('alt' => $alt, 'title' => $alt, 'attributes' => array('class' => 'test')));
-   *     $html .= $image_render->render(); 
+   *     $html .= $image_render->render();
    *   }
-     * 
+     *
      * @param $options
      *  Optional. Set file attributes on image file (actually is used just on theme_image_formatter())
-     * 
+     *
      * @return $this instance
      */
     public function setAttributes($options = array()) {
@@ -75,7 +75,7 @@ class TwinbitFrontendFileRender {
     }
 
     /**
-     * @return file as html link rendered 
+     * @return file as html link rendered
      */
     public function renderAsLink($options) {
       $this->renderable['#theme'] = $options['#theme'];
