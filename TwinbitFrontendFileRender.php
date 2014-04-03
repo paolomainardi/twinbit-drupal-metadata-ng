@@ -41,12 +41,15 @@ class TwinbitFrontendFileRender {
 
     /**
      * Example:
-     * $image_renderers = new TwinbitFrontendImage('node', $file_ref, 'field_file_upload');
+     * 
+     * $entity is the entity
+     * 
+     * $image_renderers = new TwinbitFrontendImage('node', $entity, 'field_file_image');
      *  foreach ($image_renderers->renderers as $image_render) {
-   *     $image_render->setStyle('product_photo')
-   *                                    ->setAttributes(array('alt' => $alt, 'title' => $alt, 'attributes' => array('class' => 'test')));
-   *     $html .= $image_render->render();
-   *   }
+     *   $image_render->setStyle('product_photo')
+     *                ->setAttributes(array('alt' => $alt, 'title' => $alt, 'width' => 100, 'height' => 100, 'attributes' => array('class' => 'test')));
+     *   $html .= $image_render->render();
+     * }
      *
      * @param $options
      *  Optional. Set file attributes on image file (actually is used just on theme_image_formatter())
